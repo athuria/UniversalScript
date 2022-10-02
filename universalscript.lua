@@ -51,10 +51,16 @@ FpsSection:NewButton("120Fps", "FpsCap120", function()
 end)
 
 --Main3
-scriptlaunchersection:NewButton("InfiniteYIELD IY", "FE ADMINS COMMANDS", function()
+scriptlaunchersection:NewButton("Infiniteyield", "FE ADMINS COMMANDS", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
 end)
-scriptlaunchersection:NewLabel("MoreScriptSOON^^")
+scriptlaunchersection:NewButton("DarkDex", "DarkDex", function()
+    loadstring(game:HttpGet("https://gist.githubusercontent.com/DinosaurXxX/b757fe011e7e600c0873f967fe427dc2/raw/ee5324771f017073fc30e640323ac2a9b3bfc550/dark%2520dex%2520v4", true))()
+end)
+scriptlaunchersection:NewButton("RemoteSpy", "RemoteSpy", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/bCghX33W", true))()
+end)
+scriptlaunchersection:NewLabel("MoreScript soon^^")
 
 --Main4
 creditsection:NewButton("bateman#8865", "ClickToCopy", function()
@@ -68,13 +74,13 @@ wait()
     Duration = 5; -- how long the notification should in secounds
     })
 end)
-creditsection:NewButton("EDGEIY", "ClickToCopy", function()
+creditsection:NewButton("InfiniteYield", "ClickToCopy", function()
 wait()
     setclipboard("text going to clipboard goes here")
     toclipboard("https://github.com/EdgeIY")
     game.StarterGui:SetCore("SendNotification", {
     Title = "GithubLINK COPY!"; -- the title (ofc)
-    Text = "EdgeIY link copy!"; -- what the text says (ofc)
+    Text = "Infinite yield copy!!"; -- what the text says (ofc)
     Icon = "rbxassetid://11130690937"; -- the image if u want. 
     Duration = 5; -- how long the notification should in secounds
     })
