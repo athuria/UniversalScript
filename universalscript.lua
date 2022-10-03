@@ -85,6 +85,6 @@ wait()
     Duration = 5; -- how long the notification should in secounds
     })
 end)
-creditsection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.LeftAlt, function()
+creditsection:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.RightAlt, function()
     Library:ToggleUI()
 end)
