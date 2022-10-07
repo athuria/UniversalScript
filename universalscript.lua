@@ -12,7 +12,7 @@ local Main3 = Window:NewTab("Script Launcher")
 local scriptlaunchersection = Main3:NewSection("ScriptLauncher")
 local Main4 = Window:NewTab("Credits")
 local creditsection = Main4:NewSection("Credits")
-
+local LabelSectionMain1 = MainSection:NewLabel("If You Deactivated The Anti Sit You cant jump")
 --Main
 MainSection:NewButton("AntiAfk", "Enable AntiAfk", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/athuria/anti-afk-no-ui/master/antiafk.lua", true))()
