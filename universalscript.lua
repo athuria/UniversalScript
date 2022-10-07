@@ -33,7 +33,7 @@ end)
 MainSection:NewButton("FpsBoost", "EnableFpsboost 1-5sec", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/athuria/FpsBoosts/master/FpsBoosts.lua", true))()
 end)
-Section:NewToggle("AntiSit", "Antisit", function(state)
+MainSection:NewToggle("AntiSit", "Antisit", function(state)
     if state then
         local RunService = game:GetService("RunService")
 function antiSit()
@@ -42,7 +42,14 @@ game.Players.LocalPlayer.Character.Humanoid.Jump = false
 end
 end
 RunService:BindToRenderStep("tempBinding", 1000, antiSit)
-    else
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Anti Sit Activated!"; -- the title (ofc)
+    Text = "xD"; -- what the text says (ofc)
+    Icon = "rbxassetid://11130690937"; -- the image if u want. 
+    Duration = 5; -- how long the notification should in secounds
+    })
+wait()
+	else
       local RunService = game:GetService("RunService")
 function antiSit()
 if game.Players.LocalPlayer.Character.Humanoid:GetState() == Enum.HumanoidStateType.Seated then 
@@ -50,7 +57,14 @@ game.Players.LocalPlayer.Character.Humanoid.Jump = true
 end
 end
 RunService:BindToRenderStep("tempBinding", 1000, antiSit)
-    end
+ wait()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Anti Afk Activated!"; -- the title (ofc)
+    Text = "xD"; -- what the text says (ofc)
+    Icon = "rbxassetid://11130690937"; -- the image if u want. 
+    Duration = 5; -- how long the notification should in secounds
+    })
+     end
 end)
 MainSection3:NewButton("RTX ON", "Turn on The Rtx", function()
     getgenv().mode = "Autumn" -- Choose from Summer and Autumn
