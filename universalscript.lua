@@ -48,7 +48,6 @@ game.StarterGui:SetCore("SendNotification", {
     Icon = "rbxassetid://11130690937"; -- the image if u want. 
     Duration = 5; -- how long the notification should in secounds
     })
-wait()
 	else
       local RunService = game:GetService("RunService")
 function antiSit()
@@ -57,9 +56,9 @@ game.Players.LocalPlayer.Character.Humanoid.Jump = true
 end
 end
 RunService:BindToRenderStep("tempBinding", 1000, antiSit)
- wait()
+
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Anti Afk Activated!"; -- the title (ofc)
+    Title = "Anti Sit Deactivated!"; -- the title (ofc)
     Text = "xD"; -- what the text says (ofc)
     Icon = "rbxassetid://11130690937"; -- the image if u want. 
     Duration = 5; -- how long the notification should in secounds
