@@ -12,7 +12,6 @@ local Main3 = Window:NewTab("Script Launcher")
 local scriptlaunchersection = Main3:NewSection("ScriptLauncher")
 local Main4 = Window:NewTab("Credits")
 local creditsection = Main4:NewSection("Credits")
-local LabelSectionMain1 = MainSection:NewLabel("If You Deactivated The Anti Sit You cant jump")
 --Main
 MainSection:NewButton("AntiAfk", "Enable AntiAfk", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/athuria/anti-afk-no-ui/master/antiafk.lua", true))()
@@ -33,7 +32,7 @@ end)
 MainSection:NewButton("FpsBoost", "EnableFpsboost 1-5sec", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/athuria/FpsBoosts/master/FpsBoosts.lua", true))()
 end)
-MainSection:NewToggle("AntiSit", "Antisit", function(state)
+MainSection:NewToggle("AntiSit", "if u deactivated this you cant jump", function(state)
     if state then
         local RunService = game:GetService("RunService")
 function antiSit()
@@ -64,7 +63,6 @@ game.StarterGui:SetCore("SendNotification", {
     })
      end
 end)
-MainSection:NewLabel("If You Deactivated The Anti Sit You cant jump")
 
 --RTX
 MainSection3:NewButton("RTX ON", "Turn on The Rtx", function()
