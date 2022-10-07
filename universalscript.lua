@@ -5,6 +5,7 @@ local Window = Library.CreateLib("Universal Script", "BloodTheme")
 local Main = Window:NewTab("Main")
 local MainSection = Main:NewSection("Main")
 local MainSection2 = Main:NewSection("Screen")
+local MainSection3 = Main:NewSection("RTX | DONT USE if slow pc")
 local Main2 = Window:NewTab("FPSCAP")
 local FpsSection = Main2:NewSection("FPSCAP")
 local Main3 = Window:NewTab("Script Launcher")
@@ -14,11 +15,14 @@ local creditsection = Main4:NewSection("Credits")
 
 --Main
 MainSection:NewButton("AntiAfk", "Enable AntiAfk", function()
-local vu = game:GetService("VirtualUser")
-game:GetService("Players").LocalPlayer.Idled:Connect()
-   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-   wait(1)
-   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/athuria/anti-afk-no-ui/master/antiafk.lua", true))()
+wait(1)
+    game.StarterGui:SetCore("SendNotification", {
+    Title = "Anti Afk Activated!"; -- the title (ofc)
+    Text = "xD"; -- what the text says (ofc)
+    Icon = "rbxassetid://11130690937"; -- the image if u want. 
+    Duration = 5; -- how long the notification should in secounds
+    })
 end)
 MainSection:NewButton("AntiAfk With UI", "Enable Antiafk", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/athuria/anti-afk/master/antiafk.lua", true))()
@@ -28,6 +32,155 @@ MainSection:NewButton("Serverstats", "Enable ServerStats", function()
 end)
 MainSection:NewButton("FpsBoost", "EnableFpsboost 1-5sec", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/athuria/FpsBoosts/master/FpsBoosts.lua", true))()
+end)
+MainSection3:NewButton("RTX ON", "Turn on The Rtx", function()
+    getgenv().mode = "Autumn" -- Choose from Summer and Autumn
+            settings().Rendering.QualityLevel = 10
+            local a = game.Lighting
+            a.Ambient = Color3.fromRGB(33, 33, 33)
+            a.Brightness = 6.67
+            a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+            a.ColorShift_Top = Color3.fromRGB(255, 247, 237)
+            a.EnvironmentDiffuseScale = 0.105
+            a.EnvironmentSpecularScale = 0.522
+            a.GlobalShadows = true
+            a.OutdoorAmbient = Color3.fromRGB(51, 54, 67)
+            a.ShadowSoftness = 0.04
+            a.GeographicLatitude = -15.525
+            a.ExposureCompensation = 0.75
+            local b = Instance.new("BloomEffect", a)
+            b.Enabled = true
+            b.Intensity = 0.04
+            b.Size = 1900
+            b.Threshold = 0.915
+            local c = Instance.new("ColorCorrectionEffect", a)
+            c.Brightness = 0.176
+            c.Contrast = 0.39
+            c.Enabled = true
+            c.Saturation = 0.2
+            c.TintColor = Color3.fromRGB(217, 145, 57)
+            if getgenv().mode == "Summer" then
+                c.TintColor = Color3.fromRGB(255, 220, 148)
+            elseif getgenv().mode == "Autumn" then
+                c.TintColor = Color3.fromRGB(217, 145, 57)
+            else
+                warn("No mode selected!")
+                print("Please select a mode")
+                b:Destroy()
+                c:Destroy()
+            end
+            local d = Instance.new("DepthOfFieldEffect", a)
+            d.Enabled = true
+            d.FarIntensity = 0.077
+            d.FocusDistance = 21.54
+            d.InFocusRadius = 20.77
+            d.NearIntensity = 0.277
+            local e = Instance.new("ColorCorrectionEffect", a)
+            e.Brightness = 0
+            e.Contrast = -0.07
+            e.Saturation = 0
+            e.Enabled = true
+            e.TintColor = Color3.fromRGB(255, 247, 239)
+            local e2 = Instance.new("ColorCorrectionEffect", a)
+            e2.Brightness = 0.2
+            e2.Contrast = 0.45
+            e2.Saturation = -0.1
+            e2.Enabled = true
+            e2.TintColor = Color3.fromRGB(255, 255, 255)
+            local s = Instance.new("SunRaysEffect", a)
+            s.Enabled = true
+            s.Intensity = 0.01
+            s.Spread = 0.146
+end)
+MainSection3:NewButton("RTX OFF", "Turn Off The RTX", function()
+    local light = game.Lighting
+	for i, v in pairs(light:GetChildren()) do
+		v:Destroy()
+	end
+
+	local ter = workspace.Terrain
+	local color = Instance.new("ColorCorrectionEffect")
+	local bloom = Instance.new("BloomEffect")
+	local sun = Instance.new("SunRaysEffect")
+	local blur = Instance.new("BlurEffect")
+
+	color.Parent = light
+	bloom.Parent = light
+	sun.Parent = light
+	blur.Parent = light
+
+	-- enable or disable shit
+
+	local config = {
+
+		Terrain = true;
+		ColorCorrection = true;
+		Sun = true;
+		Lighting = true;
+		BloomEffect = true;
+
+	}
+
+	-- settings {
+
+	color.Enabled = false
+	color.Contrast = 0.15
+	color.Brightness = 0.1
+	color.Saturation = 0.25
+	color.TintColor = Color3.fromRGB(255, 222, 211)
+
+	bloom.Enabled = false
+	bloom.Intensity = 0.1
+
+	sun.Enabled = false
+	sun.Intensity = 0.2
+	sun.Spread = 1
+
+	bloom.Enabled = false
+	bloom.Intensity = 0.05
+	bloom.Size = 32
+	bloom.Threshold = 1
+
+	blur.Enabled = false
+	blur.Size = 6
+
+	-- settings }
+
+
+	if config.ColorCorrection then
+		color.Enabled = true
+	end
+
+
+	if config.Sun then
+		sun.Enabled = true
+	end
+
+
+	if config.Terrain then
+		-- settings {
+		ter.WaterColor = Color3.fromRGB(10, 10, 24)
+		ter.WaterWaveSize = 0.1
+		ter.WaterWaveSpeed = 22
+		ter.WaterTransparency = 0.9
+		ter.WaterReflectance = 0.05
+		-- settings }
+	end
+
+
+	if config.Lighting then
+		-- settings {
+		light.Ambient = Color3.fromRGB(0, 0, 0)
+		light.Brightness = 4
+		light.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+		light.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+		light.ExposureCompensation = 0
+		light.FogColor = Color3.fromRGB(132, 132, 132)
+		light.GlobalShadows = true
+		light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
+		light.Outlines = false
+		-- settings }
+	end
 end)
 MainSection2:NewButton("WhiteScreen", "EnableWhiteScreen", function()
     game:GetService("RunService"):Set3dRenderingEnabled(false)
