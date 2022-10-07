@@ -14,6 +14,22 @@ local Main4 = Window:NewTab("Credits")
 local creditsection = Main4:NewSection("Credits")
 
 --Main
+MainSection:NewButton("AntiSit", "Activate Anti Sit!!", function()
+		local RunService = game:GetService("RunService")
+function antiSit()
+if game.Players.LocalPlayer.Character.Humanoid:GetState() == Enum.HumanoidStateType.Seated then 
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end
+end
+RunService:BindToRenderStep("tempBinding", 1000, antiSit)
+wait()
+	  game.StarterGui:SetCore("SendNotification", {
+    Title = "Anti Afk Activated!"; -- the title (ofc)
+    Text = "xD"; -- what the text says (ofc)
+    Icon = "rbxassetid://11130690937"; -- the image if u want. 
+    Duration = 5; -- how long the notification should in secounds
+    })
+end)	
 MainSection:NewButton("AntiAfk", "Enable AntiAfk", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/athuria/anti-afk-no-ui/master/antiafk.lua", true))()
 wait(1)
