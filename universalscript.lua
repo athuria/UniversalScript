@@ -24,7 +24,7 @@ end
 RunService:BindToRenderStep("tempBinding", 1000, antiSit)
 wait()
 	  game.StarterGui:SetCore("SendNotification", {
-    Title = "Anti Afk Activated!"; -- the title (ofc)
+    Title = "Anti Sit Activated!"; -- the title (ofc)
     Text = "xD"; -- what the text says (ofc)
     Icon = "rbxassetid://11130690937"; -- the image if u want. 
     Duration = 5; -- how long the notification should in secounds
