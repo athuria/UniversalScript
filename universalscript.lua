@@ -56,7 +56,6 @@ game.Players.LocalPlayer.Character.Humanoid.Jump = false
 end
 end
 RunService:BindToRenderStep("tempBinding", 1000, antiSit)
-
 game.StarterGui:SetCore("SendNotification", {
     Title = "Anti Sit Deactivated!"; -- the title (ofc)
     Text = "xD"; -- what the text says (ofc)
