@@ -64,6 +64,9 @@ game.StarterGui:SetCore("SendNotification", {
     })
      end
 end)
+MainSection:NewLabel("If You Deactivated The Anti Sit You cant jump")
+
+--RTX
 MainSection3:NewButton("RTX ON", "Turn on The Rtx", function()
     getgenv().mode = "Autumn" -- Choose from Summer and Autumn
             settings().Rendering.QualityLevel = 10
@@ -213,6 +216,7 @@ MainSection3:NewButton("RTX OFF", "Turn Off The RTX", function()
 		-- settings }
 	end
 end)
+--white screen
 MainSection2:NewButton("WhiteScreen", "EnableWhiteScreen", function()
     game:GetService("RunService"):Set3dRenderingEnabled(false)
 end)
